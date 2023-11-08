@@ -14,7 +14,7 @@ COPY . /app
 EXPOSE 80
 
 # Instalamos las dependencias
-
+RUN npm install
 
 # Inciamos el servidor de node
 CMD [ "node", "app.js" ]

@@ -39,3 +39,8 @@ ignorar directorios node_modules y .vscode
     .vscode
 ```
 
+para instalar las dependencias desde el inicio del contenedor.
+
+```docker
+    RUN npm install
+```
