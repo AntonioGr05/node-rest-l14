@@ -4,17 +4,18 @@
 FROM node:lts-slim
 
 # Crea un directorio en la imagen
-WORKDIR /app
+WORKDIR /app/
+
+COPY ./package*.json /app/
+
+# Instala las dependencias
+RUN npm install
 
 # Copia el archivo package.json a la imagen
-COPY . /app
+COPY . /app/
 
 # Exponemos el puerto 80
-
 EXPOSE 80
-
-# Instalamos las dependencias
-RUN npm install
 
 # Inciamos el servidor de node
 CMD [ "node", "app.js" ]
