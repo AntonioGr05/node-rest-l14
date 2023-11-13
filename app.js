@@ -1,13 +1,15 @@
 const http = require('http');
+const express = require('express');
+const app = express();
 
 const puerto = 80;
 
-const servidor = http.createServer((req, res) => {
+app.get('/', function(req, res) {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
     res.end('Hola Mundo');
 });
 
-servidor.listen(puerto, () => {
-    console.log(`Servidor iniciado en http://localhost:${puerto}`);
+app.listen(puerto, function() {
+    console.log('servidor en el puerto ' + puerto);
 });
