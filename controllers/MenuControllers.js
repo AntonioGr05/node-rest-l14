@@ -10,6 +10,7 @@ class MenusController
     static async getById(req, res) {
         let id = req.params.id;
         let data = await MenuModel.consultarPorId(id)
+        res.send(data);
     }
 }
 

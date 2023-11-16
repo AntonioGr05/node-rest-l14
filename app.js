@@ -21,10 +21,10 @@ app.get('/productos', ProductoController.indexGet);
 app.get('/productos-tipos', ProductosTipoController.indexGet);
 
 // endpoint para ver el menu por id
-app.get('/menus/:id', MenusController.getById);
+app.get('/menus/:id([0-9]+)', MenusController.getById);
 
-
-
+/* app.get('/categorias/:id([0-9]+)', CategoriaController.getById);
+ */
 
 app.get('/', function(req, res) {
     res.statusCode = 200;
